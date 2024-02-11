@@ -13,6 +13,36 @@
 
 ## Dependancies to install : Perform in python/conda virtual environment 
 
-* Biopython 
+* Biopython : Biological analysis library
 ```sh
 pip install biopython
+```
+* Streamlit : Python Web Development library
+```sh
+pip install streamlit
+```
+* StMol : For rendering molecules into streamlit
+```sh
+pip install stmol
+pip install ipython_genutils
+```
+* Py3DMol : For rendering molecules into interactive mode python
+```sh
+pip install py3Dmol==2.0.0.post2
+```
+* Requests : To fetch API calls from developers guide 
+```sh
+python -m pip install requests
+```
+* To run the app 
+```sh
+streamlit run [filename]
+```
+---
+
+### Links for reference 
+
+* StMol : [StMol Github Documentation](https://github.com/napoles-uach/stmol)
+* Py3DMol : [Py3DMol Github Documentation](https://www.insilicochemistry.io/tutorials/foundations/chemistry-visualization-with-py3dmol)
+
+---
