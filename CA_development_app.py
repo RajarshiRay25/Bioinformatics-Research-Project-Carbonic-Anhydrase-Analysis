@@ -204,7 +204,7 @@ if sidebar_render == "Protein Structure Visualiser":
         if RESIDUE_FOCUS is not None:
             showmol(render_pdb_resn(viewer = xyzview,resn_lst = [RESIDUE_FOCUS,]),height = 500,width=600)
         else:
-            showmol(xyzview, height = 500,width=1920) # Render the molecule 
+            showmol(xyzview, height = 500,width=800) # Render the molecule 
 
     if st.button("Get The Structure"):
         with st.spinner(f"Obtaining PDB Structure for {PDB_Code}"):
@@ -275,9 +275,9 @@ if sidebar_render == "Protein Modelling : ESMFold":
         pdbview.zoomTo()
         pdbview.spin(SPIN_ANIMATION)
         if RESIDUE_FOCUS is not None:
-            showmol(render_pdb_resn(viewer = pdbview,resn_lst = [RESIDUE_FOCUS,]),height = 500,width=1920)
+            showmol(render_pdb_resn(viewer = pdbview,resn_lst = [RESIDUE_FOCUS,]),height = 500,width=800)
         else:
-            showmol(pdbview, height = 500,width=600)
+            showmol(pdbview, height = 500,width=800)
 
     st.title("Protein Structure Predictor and Modellor")
     st.header("Powered by ESM Fold API")
