@@ -202,7 +202,7 @@ if sidebar_render == "Protein Structure Visualiser":
         xyzview.spin(SPIN_ANIMATION) # Spin animation
 
         if RESIDUE_FOCUS is not None:
-            showmol(render_pdb_resn(viewer = xyzview,resn_lst = [RESIDUE_FOCUS,]),height = 500,width=600)
+            showmol(render_pdb_resn(viewer = xyzview,resn_lst = [RESIDUE_FOCUS,]),height = 500,width=800)
         else:
             showmol(xyzview, height = 500,width=800) # Render the molecule 
 
