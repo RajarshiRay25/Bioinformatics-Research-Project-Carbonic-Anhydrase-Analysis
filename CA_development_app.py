@@ -202,7 +202,7 @@ if sidebar_render == "Protein Structure Visualiser":
         xyzview.spin(SPIN_ANIMATION) # Spin animation
 
         if RESIDUE_FOCUS is not None:
-            showmol(render_pdb_resn(viewer = xyzview,resn_lst = [RESIDUE_FOCUS,]),height = 500,width=1920)
+            showmol(render_pdb_resn(viewer = xyzview,resn_lst = [RESIDUE_FOCUS,]),height = 500,width=600)
         else:
             showmol(xyzview, height = 500,width=1920) # Render the molecule 
 
@@ -277,7 +277,7 @@ if sidebar_render == "Protein Modelling : ESMFold":
         if RESIDUE_FOCUS is not None:
             showmol(render_pdb_resn(viewer = pdbview,resn_lst = [RESIDUE_FOCUS,]),height = 500,width=1920)
         else:
-            showmol(pdbview, height = 500,width=1920)
+            showmol(pdbview, height = 500,width=600)
 
     st.title("Protein Structure Predictor and Modellor")
     st.header("Powered by ESM Fold API")
