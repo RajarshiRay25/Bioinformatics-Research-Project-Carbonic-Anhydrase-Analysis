@@ -1,3 +1,7 @@
 biopython==1.79
 stmol==0.0.9
 py3Dmol==2.0.0.post2
+ipython-genutils==0.2.0
+pandas==1.4.3
+requests==2.28.1
+
