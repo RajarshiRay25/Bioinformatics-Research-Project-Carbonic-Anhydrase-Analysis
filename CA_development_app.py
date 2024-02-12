@@ -17,7 +17,7 @@ from io import BytesIO
 
 # Create a sidebar
 st.sidebar.header("Sequence Operations🧬💻")
-sidebar_render = st.sidebar.radio("Navigate to : ",["Home","Sequence Analysis" , "Compute Protein Structure Parameters","Sequence Alignment & BLAST","Protein Structure Visualiser","Protein-Protein and Protein-Chemical Interaction"])
+sidebar_render = st.sidebar.radio("Navigate to : ",["Home","Sequence Analysis" , "Compute Protein Structure Parameters","Sequence Alignment & BLAST","Protein Structure Visualiser","Protein-Protein and Protein-Chemical Interaction" , "Protein Modelling : ESMFold"])
 
 # Header Main Page
 if sidebar_render == "Home":
@@ -262,4 +262,53 @@ if sidebar_render == "Protein-Protein and Protein-Chemical Interaction":
         
     else:
         st.info(f"Provide your protein")
+    
+# Create the protein modelling feature through ESMFold
+        
+if sidebar_render == "Protein Modelling : ESMFold":
+    
+    def render_mol(pdb_file,SPIN_ANIMATION,RESIDUE_FOCUS):
+        pdbview = py3Dmol.view()
+        pdbview.setStyle({'cartoon': {'color': 'spectrum'}})
+        pdbview.addModel(pdb_file, 'pdb')
+        pdbview.setBackgroundColor(color_pal)  # Setting background color style
+        pdbview.zoomTo()
+        pdbview.spin(SPIN_ANIMATION)
+        if RESIDUE_FOCUS is not None:
+            showmol(render_pdb_resn(viewer = pdbview,resn_lst = [RESIDUE_FOCUS,]),height = 500,width=1920)
+        else:
+            showmol(pdbview, height = 500,width=1920)
+
+    st.title("Protein Structure Predictor and Modellor")
+    st.header("Powered by ESM Fold API")
+
+    AMINO_ACID_SEQUENCE_INPUT = st.text_input("Enter the amino acid sequence.Example sequence is given replace with your own!",value="AYML")
+
+    RESIDUE_FOCUS = st.text_input("Enter a amino acid residue you want to focus on. (Eg, - ALA ). Leave Blank if not required.")
+    
+    ## Spin animation query
+    SPIN_ANIMATION = st.selectbox("Do you want a spin animation on the structure" , [True , False])
+
+    ## Background color palette
+    color_pal = st.color_picker("Pick Color","#89cff0")
+
+    # Disable SSL verification
+    requests.packages.urllib3.disable_warnings()  # Disable script based warnings
+
+    # Send the POST request with the query data
+
+    url = "https://api.esmatlas.com/foldSequence/v1/pdb/"
+    response = requests.post(url, data=AMINO_ACID_SEQUENCE_INPUT,verify=False)
+
+    # Check if the request was successful
+    if response.status_code == 200:
+        pdb_string = response.content.decode('utf-8')  # Convert the binary into text format to pass it to modeller
+
+        st.download_button(label="Download PDB", data=pdb_string, file_name="predicted_structure.pdb", mime="chemical/x-pdb")
+
+        st.success("Protein structure prediction successful.")
+        render_mol(pdb_string,SPIN_ANIMATION,RESIDUE_FOCUS)
+    else:
+        st.error(f"Error: {response.status_code}, {response.reason}")
+
     
