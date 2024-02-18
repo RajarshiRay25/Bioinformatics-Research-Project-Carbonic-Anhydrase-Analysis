@@ -17,7 +17,7 @@ from io import BytesIO
 
 # Create a sidebar
 st.sidebar.header("Sequence Operations🧬💻")
-sidebar_render = st.sidebar.radio("Navigate to : ",["Home","Sequence Analysis" , "Compute Protein Structure Parameters","Sequence Alignment & BLAST","Protein Structure Visualiser","Protein-Protein and Protein-Chemical Interaction" , "Protein Modelling : ESMFold"])
+sidebar_render = st.sidebar.radio("Navigate to : ",["Home","Sequence Analysis" , "Compute Protein Structure Parameters","Sequence Alignment & BLAST","Protein Structure Visualiser","Protein-Protein and Protein-Chemical Interaction" , "Protein Modelling : ESMFold" , "Link to Our QSAR Server" , "About Us"])
 
 # Header Main Page
 if sidebar_render == "Home":
@@ -312,3 +312,16 @@ if sidebar_render == "Protein Modelling : ESMFold":
         st.error(f"Error: {response.status_code}, {response.reason}")
 
     
+# Create the page to navigate to QSAR Server developed by our team
+        
+if sidebar_render == "Link to Our QSAR Server":
+    st.title("Visit our Cheminformatics Server")
+    st.write("##### Here you will be able to access the server developed by our team which specificallyd deals with In silico QSAR analysis on Carbonic Anhydrases(CA) of Mycobacterium tuberculosis bacteria.")
+
+    st.markdown("""#### Visit the following links to access QSAR based servers : \n * QSAR Server for general analysis of Carbonic Anhydrases(CA) of Mycobacterium tuberculosis : [Carbonic Anhydrase General Analysis](https://mtb-ca-pred.streamlit.app/) \n * QSAR Server for analysis of Carbonic Anhydrases(CA) of specifically CA-1 and CA-2 of Mycobacterium tuberculosis : [Carbonic Anhydrase CA-1 and CA-2 Analysis](https://mtbca-selec-pred.streamlit.app/) """)
+
+if sidebar_render == "About Us":
+    st.title("Meet the Team of Developers and Researchers")
+    st.markdown("""---""")
+    st.markdown("""1. **Rajarshi Ray** : Department of Biotechnology, University of Engineering and Management Kolkata.\n --- \n 2. **Ratul Bhowmick** : Faculty of Medicine and Health Technology, Tampere University, Tampere, Finland. \n --- \n 3. **Ajay Manaithiya** : Department of Pharmaceutical Chemistry, School of Pharmaceutical Education and Research, Jamia Hamdard, New Delhi, India. \n --- \n 4. **Dr. Ashok Aspatwar** : Faculty of Medicine and Health Technology, Tampere University, Tampere, Finland. \n ---
+""")
