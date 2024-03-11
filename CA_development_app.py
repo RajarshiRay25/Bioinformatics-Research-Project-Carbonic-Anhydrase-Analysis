@@ -21,7 +21,7 @@ sidebar_render = st.sidebar.radio("Navigate to : ",["Home","Sequence Analysis" ,
 
 # Header Main Page
 if sidebar_render == "Home":
-    st.title('Bioinformatics Sequence Analysis Server')
+    st.title('SeqEclipse : Bioinformatics Sequence Analysis Server')
     st.write("""
     ## Welcome to the Bioinformatics Server
     ##### This server will provide base sequence analysis workflows for protein sequences in form of FASTA file format.In this project although we are considering the main workflow focus on Carbonic Anhydrases and their amino acid sequence analysis through bioinformatics analysis,this server has been build to analyse a wide spectrum of amino acid sequences in FASTA format. Some of the base features which are included into this server are :
