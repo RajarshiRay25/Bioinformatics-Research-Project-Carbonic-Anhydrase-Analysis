@@ -2,6 +2,9 @@
 ## Bioinformatics Server to analyse protein sequences
 
 #### This server is build using Python programming coupled with its Web Development library - Streamlit and combining biological analysis libraries like Biopython,py3DMol and stMol to focus on several important analytical techniques to analyse proteins and amino acids some of the features which can be computed from this server are:
+### Public access link for using our developed server.
+
+* Seq-Eclipse : [Visit our server](https://seqeclipse.streamlit.app/)
 
 - Amino Acid FASTA file uploader.
 - Calculation of Physio-Chemical properties of protein using EXPASY programming.
