@@ -323,5 +323,5 @@ if sidebar_render == "Link to Our QSAR Server":
 if sidebar_render == "About Us":
     st.title("Meet the Team of Developers and Researchers")
     st.markdown("""---""")
-    st.markdown("""1. **Rajarshi Ray** : Department of Biotechnology, University of Engineering and Management Kolkata.\n --- \n 2. **Ratul Bhowmick** : Faculty of Medicine and Health Technology, Tampere University, Tampere, Finland. \n --- \n 3. **Ajay Manaithiya** : Department of Pharmaceutical Chemistry, School of Pharmaceutical Education and Research, Jamia Hamdard, New Delhi, India. \n --- \n 4. **Dr. Ashok Aspatwar** : Faculty of Medicine and Health Technology, Tampere University, Tampere, Finland. \n ---
+    st.markdown("""1. **Rajarshi Ray** : Faculty of Medicine and Health Technology, Tampere University, Tampere, Finland.\n --- \n 2. **Ratul Bhowmik** : Faculty of Medicine and Health Technology, Tampere University, Tampere, Finland. \n --- \n 3. **Ajay Manaithiya** : Faculty of Medicine and Health Technology, Tampere University, Tampere, Finland. \n --- \n 4. **Dr. Ashok Aspatwar** : Faculty of Medicine and Health Technology, Tampere University, Tampere, Finland. \n ---
 """)
